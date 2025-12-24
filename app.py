@@ -15,7 +15,7 @@ ACCESS_PASSWORD = os.environ.get("PASSWORD", "123456")
 if GEMINI_API_KEY:
     try:
         genai.configure(api_key=GEMINI_API_KEY)
-        model = genai.GenerativeModel('gemini-1.5-flash')
+        model = genai.GenerativeModel('gemini-1.5-flash-001')
     except Exception as e:
         print(f"Gemini Warning: {e}")
         model = None
@@ -85,3 +85,4 @@ def login():
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
+
