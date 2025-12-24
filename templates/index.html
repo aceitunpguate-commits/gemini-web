@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 图片分析（免翻墙）</title>
+    <style>
+        body { font-family: -apple-system, sans-serif; padding: 20px; max-width: 600px; margin: 0 auto; background: #f9f9f9; }
+        .container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        h2 { text-align: center; color: #333; }
+        .upload-area { border: 2px dashed #ddd; padding: 20px; text-align: center; border-radius: 8px; margin-bottom: 20px; }
+        button { width: 100%; padding: 12px; background: #0070f3; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; transition: 0.2s; }
+        button:hover { background: #0051a2; }
+        .result { margin-top: 25px; padding: 15px; background: #f0f7ff; border-radius: 8px; border-left: 4px solid #0070f3; }
+        pre { white-space: pre-wrap; word-wrap: break-word; font-family: inherit; color: #333; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>📷 图片智能分析</h2>
+        <form method="post" enctype="multipart/form-data">
+            <div class="upload-area">
+                <p>点击选择或拍摄图片</p>
+                <input type="file" name="file" accept="image/*" required>
+            </div>
+            <button type="submit">✨ 开始分析</button>
+        </form>
+
+        {% if result %}
+        <div class="result">
+            <strong>🤖 分析结果：</strong>
+            <pre>{{ result }}</pre>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
